@@ -4,7 +4,7 @@ let commonPokemons = []
 const pokemonListWrapper = document.getElementById('pokemon-list-wrapper')
 
 
-// odpala sie przy 1 renderze strony
+// odpala sie przy 1 renderze strony wyswietla przykladowe pokemony
 document.addEventListener('DOMContentLoaded', async () => {
     
     for (let index = 0; index < commonPokemonNames.length; index++) {
@@ -36,10 +36,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 })
 
 
-let carouselItems = ['1', '2', '3']
-const generateCarousel = () => {
-
-}
 
 const getPokemonFromAPI = async (pokemon) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
