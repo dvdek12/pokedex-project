@@ -1,7 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {    
+    let basePath = location.pathname.substring(0, location.pathname.lastIndexOf('/'));    
+    if (basePath.endsWith('/pages')) {
+        basePath = basePath.substring(0, basePath.lastIndexOf('/pages'));
+    }
     const menuItems = [
-        { text: "Strona główna", link: "../index.html" },
-        { text: "Pokedex", link: "./pages/pokedex.html" },
+        { text: "Strona główna", link: basePath+"/index.html" },
+        { text: "Pokedex", link: basePath+"/pages/pokedex.html" },
+        { text: "Creator", link: basePath+"/pages/creator.html" },
     ]
 
     const menu = document.getElementById("menu");
