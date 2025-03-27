@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: whitesmoke;   
+}
+
+nav{
+    width: 100%;
+    background-color: aquamarine;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+nav h2 {
+    color:blue;
+    font-size:3rem;
+}
+
+
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    gap: 5%;
+}
+
+.menu span{
+    font-size: 1rem;
+}
+
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.carousel-wrapper {
+    
+}
