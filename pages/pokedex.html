@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../styles/style.css">
 
-    <link rel="stylesheet" href="../styles/pokemons.css">
+    <link rel="stylesheet" href="../styles/carousel.css">
 </head>
 <body>
     <nav>
@@ -18,24 +18,26 @@
         </div>
     </nav>
 
-    <div id="pokemon-list-wrapper">
-
+    <div class="carousel-container">
+        <button class="btn btn-left">left</button>
+        <div class="carousel">
+        </div>
+        <button class="btn btn-right">right</button>
     </div>
 
-    <div class="carousel-wrapper">
-        <div class="carousel-sub-item">
-            <div class="pokemon-card">
-                
-            </div>
+    <!-- <div class="carousel-container">
+        <button id="prevButton">
+            left
+        </button>
+        <div class="carousel-wrapper">
         </div>
+        <button id="nextButton">
+            right
+        </button>
+    </div> -->
 
-        <div class="carousel-main-item">
+    <div id="pokemon-list-wrapper">
 
-        </div>
-
-        <div class="carousel-sub-item">
-
-        </div>
     </div>
 
     <script src="../scripts/pokedex.js"></script>

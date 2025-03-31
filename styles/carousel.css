@@ -1,0 +1,75 @@
+
+.pokemon-card-carousel{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pokemon-card-carousel-info {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(20, 20, 20, 0.799);
+    padding: 15px;
+    border-radius: 5%;
+}
+
+.pokemon-card-carousel-img {
+    width: 100px;
+    height: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+/* copied */
+.carousel-container {
+    
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    /* background: #3498db; */
+    background-image: url('../assets/forest.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    height: 500px;
+    transition: transform 0.5s, scale 0.5s;
+}
+.carousel-item.middle {
+    transform: scale(1.2);
+    /* background: #e74c3c; */
+    background-image: url('../assets/forest.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+.btn-left {
+    left: 10px;
+}
+.btn-right {
+    right: 10px;
+}
