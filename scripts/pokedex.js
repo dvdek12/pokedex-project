@@ -41,8 +41,12 @@ const createPokemonInfoDiv = (p) => {
     divInfo.classList.add("pokemon-card-carousel-info")
 
     const h2 = document.createElement('h2')
+    h2.classList.add('pokemon-font')
+
     const heightInfo = document.createElement('span')
+    heightInfo.classList.add('default-font')
     const weightInfo = document.createElement('span')
+    weightInfo.classList.add('default-font')
 
     if (["name", "sprites", "height", "weight"].every(key => key in p)){
         img.src = p.sprites.other.showdown.front_default
@@ -222,16 +226,34 @@ document.addEventListener('DOMContentLoaded', async () => {
         const div = document.createElement('div')
         const h2 = document.createElement('h2')
         const img = document.createElement('img')
+        const subDiv = document.createElement('div')
+        const editBtn = document.createElement('button')
+        const removeBtn = document.createElement('button')
 
         div.className = "pokemon-card"
-
-        h2.textContent = pokemon.name
-
+        
+        img.className = "pokemon-image"
         img.src = pokemon.sprites.front_default
         img.alt = `Cover photo of ${pokemon.name}`
 
+        h2.className = "pokemon-name"
+        h2.textContent = pokemon.name
+        
+        subDiv.className = "pokemon-buttons"
+        editBtn.classList.add("button")
+        editBtn.classList.add("edit")
+        editBtn.textContent = "Edytuj"
+
+        removeBtn.classList.add("button")
+        removeBtn.classList.add("delete")
+        removeBtn.textContent = "Usuń"
+
+        subDiv.appendChild(editBtn)
+        subDiv.appendChild(removeBtn)
+
         div.appendChild(h2)
         div.appendChild(img)
+        div.appendChild(subDiv)
 
         pokemonListWrapper.appendChild(div)
     })
