@@ -214,9 +214,18 @@ prevBtn.addEventListener("click", () => {
 // odpala sie przy 1 renderze strony wyswietla przykladowe pokemony
 document.addEventListener('DOMContentLoaded', async () => {
     
+    // Wczytanie pokemonow z api i dodanie do localStorage
     for (let index = 0; index < commonPokemonNames.length; index++) {
         var pokemon = await getPokemonFromAPI(commonPokemonNames[index])
-        commonPokemons.push(pokemon)
+        if(JSON.parse(window.localStorage.getItem(pokemon.name)) == null){
+            window.localStorage.setItem(pokemon.name, JSON.stringify(pokemon));
+        }
+    }
+
+    // Wczytanie pokemonow z localStorage i dodanie do tablicy (zawiera wlasne pokemony)
+    for (let index = localStorage.length-1; index >= 0; index--) {
+        pokemon = JSON.parse(window.localStorage.getItem(localStorage.key(index)))
+        commonPokemons.push(pokemon);
     }
 
     console.log(commonPokemons);
