@@ -215,10 +215,10 @@ prevBtn.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', async () => {
     
     // Wczytanie pokemonow z api i dodanie do localStorage
-    for (let index = 0; index < commonPokemonNames.length; index++) {
-        var pokemon = await getPokemonFromAPI(commonPokemonNames[index])
-        if(JSON.parse(window.localStorage.getItem(pokemon.name)) == null){
-            window.localStorage.setItem(pokemon.name, JSON.stringify(pokemon));
+    if(localStorage.length == 0){
+        for (let index = 0; index < commonPokemonNames.length; index++) {
+            var pokemon = await getPokemonFromAPI(commonPokemonNames[index])
+            localStorage.setItem(pokemon.name, JSON.stringify(pokemon));
         }
     }
 
