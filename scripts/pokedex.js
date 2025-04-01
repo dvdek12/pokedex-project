@@ -109,105 +109,10 @@ prevBtn.addEventListener("click", () => {
 });
 
 
-// updateCarousel(); // Ustawienie pierwszego środkowego elementu
-
-// CAROUSEL STUFF DOWN HERE
-// const carouselItems = [
-//     {
-//         name: 'Charizard',
-//         age: 20
-//     },
-//     {
-//         name: 'Blizzard',
-//         age: 20
-//     },
-//     {
-//         name: 'Mewtrwo',
-//         age: 20
-//     },
-//     {
-//         name: 'sasas',
-//         age: 20
-//     }
-// ]
-
-// const middlePokemon = commonPokemons[Math.floor(commonPokemons.length / 2)]
-
-// const prevButton = document.getElementById('prevButton')
-// const nextButton = document.getElementById('prevButton')
-
-
-// const updateCarousel = (side) => {
-//     const carouselItemLeft = createPokemonCard(pokemons[middlePokemonIndex - 1])
-//     carouselItemLeft.classList.add('carousel-item')
-
-//     const carouselItemRight = createPokemonCard(pokemons[middlePokemonIndex + 1])
-//     carouselItemRight.classList.add('carousel-item')
-
-//     const carouselItemMain = createPokemonCard(middlePokemon)
-//     carouselItemMain.classList.add('carousel-main-item')
-//     if(side == 'prev'){
-
-//     }
-
-//     if(side == 'next'){
-
-//     }
-// }
-
-// const createPokemonCard = (pokemon) => {
-//     const wrapper = document.createElement('div')
-//     const h2 = document.createElement('h2')
-//     const img = document.createElement('img')
-
-//     wrapper.className = 'pokemon-card-slide'
-
-//     if("name" in pokemon && "sprites" in pokemon){
-//         h2.textContent = pokemon.name
-//         img.src = pokemon.sprites.front_default
-//     }
-
-//     wrapper.appendChild(h2)
-//     wrapper.appendChild(img)
-
-//     return wrapper
-// }
-
-// const initCarousel = (pokemons) => {
-//     const carouselWrapper = document.querySelector('.carousel-wrapper')
-
-//     const middlePokemon = pokemons[Math.floor(pokemons.length / 2)]
-//     const middlePokemonIndex = pokemons.indexOf(middlePokemon)
-
-
-//     const carouselItemLeft = createPokemonCard(pokemons[middlePokemonIndex - 1])
-//     carouselItemLeft.classList.add('carousel-item')
-
-//     const carouselItemRight = createPokemonCard(pokemons[middlePokemonIndex + 1])
-//     carouselItemRight.classList.add('carousel-item')
-
-//     const carouselItemMain = createPokemonCard(middlePokemon)
-//     carouselItemMain.classList.add('carousel-main-item')
-
-
-    
-//     carouselItemMain.id = `item-${middlePokemonIndex}`
-//     carouselItemLeft.id = `item-${middlePokemonIndex - 1}`
-//     carouselItemRight.id = `item-${middlePokemonIndex + 1}`
-
-   
-    
-    
-    
-//     carouselWrapper.appendChild(carouselItemLeft)
-//     carouselWrapper.appendChild(carouselItemMain)
-//     carouselWrapper.appendChild(carouselItemRight)
-// }
-
-
-// prevButton.onclick = updateCarousel('prev')
-// nextButton.onclick = updateCarousel('next')
-
+const navigateToEditPage = (pokemon) => {
+    let basePath = location.pathname.substring(0, location.pathname.lastIndexOf('/'));
+    window.location.href = basePath+`/edit.html?pokemon=${pokemon}`  
+}
 
 
 
@@ -252,6 +157,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         editBtn.classList.add("button")
         editBtn.classList.add("edit")
         editBtn.textContent = "Edytuj"
+        editBtn.onclick = () => navigateToEditPage(pokemon.name)
 
         removeBtn.classList.add("button")
         removeBtn.classList.add("delete")
