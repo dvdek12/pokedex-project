@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     if (form) {
         form.addEventListener('submit', (e) => {
+            e.preventDefault();
             // Pobranie danych z formularza
             const formData = new FormData(e.target);
 

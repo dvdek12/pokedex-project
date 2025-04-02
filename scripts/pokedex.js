@@ -114,6 +114,16 @@ const navigateToEditPage = (pokemon) => {
     window.location.href = basePath+`/edit.html?pokemon=${pokemon}`  
 }
 
+const removePokemon = (pokemon) => {
+    if(localStorage.getItem(pokemon) !== null) {
+        localStorage.removeItem(pokemon)
+        location.reload()
+        window.alert(`Pokemon ${pokemon} został usunięty.`)
+    } else{
+        window.alert(`Pokemon ${pokemon} nie istnieje w twojej bazie.`)
+    }
+}
+
 
 
 // odpala sie przy 1 renderze strony wyswietla przykladowe pokemony
@@ -162,6 +172,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         removeBtn.classList.add("button")
         removeBtn.classList.add("delete")
         removeBtn.textContent = "Usuń"
+        removeBtn.onclick = () => removePokemon(pokemon.name)
 
         subDiv.appendChild(editBtn)
         subDiv.appendChild(removeBtn)
