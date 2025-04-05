@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +9,13 @@
 
 body{
     background-color: whitesmoke;   
+    overflow-x: hidden;
 }
 
 nav{
     width: 100%;
-    background-color: aquamarine;
-    padding: 10px;
+    background-color: rgb(28, 31, 30);
+    padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,12 +27,13 @@ nav h2 {
 
 
 
+
 .menu{
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 50%;
-    gap: 5%;
+    gap: 10%;
 }
 
 .menu span{
@@ -44,6 +48,173 @@ nav h2 {
     gap: 80px;
 }
 
-.carousel-wrapper {
-    
+/* Stylowanie navbara */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navbar-brand a {
+    color: #FF6347;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Style dla menu */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-menu li {
+    margin-left: 2rem;
+}
+
+.navbar-menu a {
+    color: #e57865;
+    font-family: 'Press Start 2P', cursive;
+    
+    text-decoration: none;
+    font-size: .6rem;
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: #3498db;
+}
+
+/* Przycisk hamburger - domyślnie ukryty */
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #e57865;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e57865;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+.pokemon-grid-wrapper{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(45, 46, 46);
+}
+
+#pokemon-list-wrapper {
+    width: 75%;
+}
+
+
+
+/* Responsywność - menu przełącza się na wersję mobilną */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    #pokemon-list-wrapper {
+        width: 50%;
+    }
+
+    .navbar-brand {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-toggle {
+        display: flex;
+        justify-content: end;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin: 0;
+        padding: 0.5rem 0;
+    }
+
+    .navbar-menu li a {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Animacja hamburgera na X */
+    .navbar-toggle.active .hamburger {
+        background-color: transparent;
+    }
+
+    .navbar-toggle.active .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .navbar-toggle.active .hamburger::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+}
+
+/* Stylowanie sekcji dla demonstracji */
+section {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

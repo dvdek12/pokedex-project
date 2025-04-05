@@ -1,4 +1,7 @@
 
+// import { showPokemonAlert } from "../utils/alert";
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     if (form) {
@@ -39,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     };
 
                     // Dodanie danych do localStorage
+
                     try{
                         localStorage.setItem(finalData.name, JSON.stringify(finalData));
                         window.alert('Pokémon został dodany!');
@@ -47,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.error('Błąd podczas zapisywania do localStorage:', error);
                         window.alert('Osiagnieto limit pokemonow!');
                     }
+
                 };
 
                 reader.readAsDataURL(imageFile); // Konwersja pliku na Base64

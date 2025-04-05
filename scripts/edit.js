@@ -119,4 +119,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     createPokemonCard(pokemon)
     createStatsGrid(pokemon)
     createSoundPlay(pokemon)
+    document.title = `Pokemap | Edit ${pokemon.name}`
 })
