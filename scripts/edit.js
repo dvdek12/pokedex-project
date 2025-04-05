@@ -43,6 +43,19 @@ const createPokemonCard = ({ name, sprites, height, weight }) => {
     
     const saveButton = document.createElement('button');
     saveButton.textContent = 'Save';
+    saveButton.onclick = () => {
+        if(heightInput.value != "" && weightInput.value != "") {
+            const updatedPokemon = {
+                ...pokemon,
+                height: heightInput.value,
+                weight: weightInput.value
+            }
+            localStorage.setItem(name, JSON.stringify(updatedPokemon));
+            alert('Pokemon eydtowany pomyslnie!');
+        } else {
+            alert('Pola nie moga byc puste!');
+        }
+    }
 
     details.appendChild(title);
     details.appendChild(heightLabel);

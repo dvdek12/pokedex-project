@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formDataObject = Object.fromEntries(formData.entries());
 
             // Sprawdzenie czy pokemon o tej samej nazwie już istnieje
-            if(localStorage.getItem(formDataObject.name) == null){
+            if(localStorage.getItem(formDataObject.name) == null || localStorage.getItem(formDataObject.name).includes(" ")) {
                 // pobranie pliku obrazu
                 const imageFile = formData.get('image');
                 var image64;
@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.readAsDataURL(imageFile); // Konwersja pliku na Base64
 
             } else {
-                // showPokemonAlert(`Pokemon with this name already exists!`)
-                window.alert('s')
+                window.alert('Pokémon o tej nazwie już istnieje lub zawiera spacje!');
             }
         });
     } else {
         console.error('Formularz nie został znaleziony w DOM.');
     }
 });
+
