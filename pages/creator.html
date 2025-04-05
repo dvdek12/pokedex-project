@@ -20,7 +20,7 @@
     </nav>
 
     <form id="pokemon-form" enctype="multipart/form-data">
-        <h1 >Lucja to gruby tłusty gej</h1>
+        <h1 >Tworzenie Pokemona</h1>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Enter pokemon name" required>
         <label for="height">Height:</label>
@@ -29,13 +29,17 @@
         <input type="number" id="weight" name="weight" placeholder="Enter pokemon weight" required>
         <label for="image">Image:</label>
         <input type="file" id="image" name="image" accept="image/*" required> 
-        <input type="submit" value="Create Pokemon">
+        <button type="submit" value="Create Pokemon">Create Pokemon</button>
     </form>
 
-    <img class="pokemon" src="">    
+    <div class="creator">
+        <button onClick="mergeImagesFunc()">Merge Images</button>
+        <a id="imggg">POBIERTZ</a>
+    </div>
     
 
     <script src="../scripts/creator.js"></script>
     <script src="../scripts/navbar.js"></script>
+    <script src="https://unpkg.com/merge-images"></script>
 </body>
 </html>

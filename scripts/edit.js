@@ -51,7 +51,7 @@ const createPokemonCard = ({ name, sprites, height, weight }) => {
                 weight: weightInput.value
             }
             localStorage.setItem(name, JSON.stringify(updatedPokemon));
-            alert('Pokemon eydtowany pomyslnie!');
+            alert('Pokemon edytowany pomyslnie!');
         } else {
             alert('Pola nie moga byc puste!');
         }
