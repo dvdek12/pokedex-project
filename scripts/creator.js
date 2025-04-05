@@ -1,10 +1,13 @@
+
 // import { showPokemonAlert } from "../utils/alert";
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+            
             // Pobranie danych z formularza
             const formData = new FormData(e.target);
 
@@ -39,10 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     };
 
                     // Dodanie danych do localStorage
-                    localStorage.setItem(finalData.name, JSON.stringify(finalData));
-                    // const alertMessage = `Pokemon ${finalData.name} has been added`
-                    // showPokemonAlert(alertMessage)
-                    window.alert('dodano')
+
+                    try{
+                        localStorage.setItem(finalData.name, JSON.stringify(finalData));
+                        window.alert('Pokémon został dodany!');
+                    }
+                    catch (error) {
+                        console.error('Błąd podczas zapisywania do localStorage:', error);
+                        window.alert('Osiagnieto limit pokemonow!');
+                    }
+
                 };
 
                 reader.readAsDataURL(imageFile); // Konwersja pliku na Base64
@@ -55,4 +64,31 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Formularz nie został znaleziony w DOM.');
     }
 });
+
+
+function mergeImagesFunc(){
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const img1 = new Image();
+    const img2 = new Image();
+
+    img1.src = '../assets/7.png';
+    img2.src = '../assets/krab.png';
+
+
+
+    img1.onload = function() {
+        canvas.width = img1.width;
+        canvas.height = img1.height;
+        ctx.drawImage(img1, 0, 0);
+        ctx.drawImage(img2, 0, 0);
+        document.body.appendChild(canvas);
+
+        const link = document.createElement('a');
+        link.download = 'merged.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    };
+} 
 
