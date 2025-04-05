@@ -1,3 +1,5 @@
+// import { showPokemonAlert } from "../utils/alert.js"
+
 const commonPokemonNames = ['Pikachu ', 'Charizard', 'Bulbasaur', 'Squirtle', 'Jigglypuff', 'Gengar', 'Eevee', 'Snorlax', 'Lucario', 'Mewtwo']
 let commonPokemons = []
 
@@ -118,7 +120,11 @@ const removePokemon = (pokemon) => {
     if(localStorage.getItem(pokemon) !== null) {
         localStorage.removeItem(pokemon)
         location.reload()
-        window.alert(`Pokemon ${pokemon} został usunięty.`)
+        window.alert('Pokemon added successfully')
+        
+        // const alertMessage = `Pokemon: ${pokemon} has been deleted.`
+        // showPokemonAlert(alertMessage)
+        
     } else{
         window.alert(`Pokemon ${pokemon} nie istnieje w twojej bazie.`)
     }

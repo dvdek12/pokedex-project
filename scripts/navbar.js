@@ -1,4 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {    
+// document.addEventListener("DOMContentLoaded", () => {    
+//     let basePath = location.pathname.substring(0, location.pathname.lastIndexOf('/'));    
+//     if (basePath.endsWith('/pages')) {
+//         basePath = basePath.substring(0, basePath.lastIndexOf('/pages'));
+//     }
+//     const menuItems = [
+//         { text: "Strona główna", link: basePath+"/index.html" },
+//         { text: "Pokedex", link: basePath+"/pages/pokedex.html" },
+//         { text: "Creator", link: basePath+"/pages/creator.html" },
+//     ]
+
+//     const menu = document.getElementById("menu");
+            
+//     menuItems.forEach(item => {
+//         const li = document.createElement("li");
+//         const a = document.createElement("a");
+//         a.textContent = item.text;
+//         a.href = item.link;
+//         li.appendChild(a);
+//         menu.appendChild(li);
+//     });
+// })
+
+document.addEventListener('DOMContentLoaded', function() {
     let basePath = location.pathname.substring(0, location.pathname.lastIndexOf('/'));    
     if (basePath.endsWith('/pages')) {
         basePath = basePath.substring(0, basePath.lastIndexOf('/pages'));
@@ -9,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { text: "Creator", link: basePath+"/pages/creator.html" },
     ]
 
-    const menu = document.getElementById("menu");
+    const menu = document.querySelector(".navbar-menu");
             
     menuItems.forEach(item => {
         const li = document.createElement("li");
@@ -19,4 +42,40 @@ document.addEventListener("DOMContentLoaded", () => {
         li.appendChild(a);
         menu.appendChild(li);
     });
-})
+
+
+    const toggleButton = document.querySelector('.navbar-toggle');
+    
+    // Funkcja do przełączania menu
+    function toggleMenu() {
+        menu.classList.toggle('active');
+        toggleButton.classList.toggle('active');
+    }
+    
+    // Nasłuchiwanie kliknięcia na przycisk hamburgera
+    toggleButton.addEventListener('click', toggleMenu);
+    
+    // Zamknięcie menu po kliknięciu na link (opcjonalne)
+    const navLinks = document.querySelectorAll('.navbar-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (menu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+    
+    // Płynne przewijanie do sekcji
+    // navLinks.forEach(link => {
+    //     link.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //         const targetId = this.getAttribute('href');
+    //         const targetSection = document.querySelector(targetId);
+            
+    //         window.scrollTo({
+    //             top: targetSection.offsetTop,
+    //             behavior: 'smooth'
+    //         });
+    //     });
+    // });
+});

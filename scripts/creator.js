@@ -1,3 +1,5 @@
+// import { showPokemonAlert } from "../utils/alert";
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     if (form) {
@@ -38,7 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Dodanie danych do localStorage
                     localStorage.setItem(finalData.name, JSON.stringify(finalData));
-                    window.alert('Pokémon został dodany!');
+                    // const alertMessage = `Pokemon ${finalData.name} has been added`
+                    // showPokemonAlert(alertMessage)
+                    window.alert('dodano')
                 };
 
                 reader.readAsDataURL(imageFile); // Konwersja pliku na Base64

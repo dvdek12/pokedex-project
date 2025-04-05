@@ -1,4 +1,59 @@
-form{
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+form {
+    background: linear-gradient(to bottom, #f8d030, #f08030);
+    border: 4px solid #2a75bb;
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-size: 16px;
+    color: #2a75bb;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 12px;
+    color: #3b4cca;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #3b4cca;
+    border-radius: 10px;
+    font-size: 12px;
+    background-color: #fff;
+    font-family: 'Press Start 2P', cursive;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #cc0000;
+    color: white;
+    font-size: 14px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    box-shadow: 0 4px #7b0000;
+}
+
+input[type="submit"]:hover {
+    background-color: #e60000;
+}
+/* form{
     background-color: rgb(59, 214, 241);
     display: flex;
     flex-direction: column;
@@ -18,4 +73,4 @@ body{
 label{
     font-family: 'Sans-serif', sans-serif;
     font-size: 20px;
-}
+} */
