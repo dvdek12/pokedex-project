@@ -1,3 +1,5 @@
+// import { showPokemonAlert } from "../utils/alert";
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     if (form) {
@@ -38,13 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Dodanie danych do localStorage
                     localStorage.setItem(finalData.name, JSON.stringify(finalData));
-                    window.alert('Pokémon został dodany!');
+                    // const alertMessage = `Pokemon ${finalData.name} has been added`
+                    // showPokemonAlert(alertMessage)
+                    window.alert('dodano')
                 };
 
                 reader.readAsDataURL(imageFile); // Konwersja pliku na Base64
 
             } else {
-                window.alert('Pokémon o tej nazwie już istnieje!');
+                // showPokemonAlert(`Pokemon with this name already exists!`)
+                window.alert('s')
             }
         });
     } else {

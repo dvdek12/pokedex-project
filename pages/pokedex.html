@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
+    <title>Pokemap | Pokedex</title>
+    <link rel="icon" type="image/x-icon" href='../favicon.ico' />
 
     <!-- pokemon font style -->
     <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/petitinho" rel="stylesheet">
                 
                 
-
+    <link rel="stylesheet" href="../styles/alert.css">
     <link rel="stylesheet" href="../styles/style.css">
+    
 
     <link rel="stylesheet" href="../styles/carousel.css">
 </head>
 <body>
-    <nav>
-        <h2>
-            Speak Easy
-        </h2>
-        <div class="menu" id="menu">
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="#" class="pokemon-font">Pokemap</a>
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+            
+            <ul class="navbar-menu">
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <div id="pokemon-alert" class="pokemon-alert hidden">
+        <div class="alert-box">
+          <p id="alert-message"></p>
         </div>
-    </nav>
+    </div> -->
+    
 
     <div class="carousel-container">
         <button class="btn btn-left">left</button>
@@ -32,8 +47,11 @@
     </div>
 
     
-    <div id="pokemon-list-wrapper" class="pokemon-grid">
+    
+    <div class="pokemon-grid-wrapper">
+        <div id="pokemon-list-wrapper" class="pokemon-grid">
 
+        </div>
     </div>
 
     <script src="../scripts/pokedex.js"></script>
