@@ -72,10 +72,11 @@ function mergeImagesFunc(){
 
     const img1 = new Image();
     const img2 = new Image();
+    const img3 = new Image();
 
-    img1.src = '../assets/7.png';
-    img2.src = '../assets/krab.png';
-
+    img1.src = '../assets/pokemonParts/hat'+indexHat+'.png';
+    img2.src = '../assets/pokemonParts/body'+indexBody+'.png';
+    img3.src = '../assets/pokemonParts/legs'+indexLegs+'.png';
 
 
     img1.onload = function() {
@@ -83,6 +84,7 @@ function mergeImagesFunc(){
         canvas.height = img1.height;
         ctx.drawImage(img1, 0, 0);
         ctx.drawImage(img2, 0, 0);
+        ctx.drawImage(img3, 0, 0);
         document.body.appendChild(canvas);
 
         const link = document.createElement('a');
@@ -91,4 +93,42 @@ function mergeImagesFunc(){
         link.click();
     };
 } 
+
+var indexHat = 1;
+var indexBody = 1;
+var indexLegs = 1;
+const maxIndex = 3;
+
+function changeHat(){
+    if(indexHat == maxIndex){
+        indexHat = 1;
+    }
+    else{
+        indexHat++;
+    }
+    const img = document.getElementById('pokemon-hat'); 
+    img.src = `../assets/pokemonParts/hat${indexHat}.png`;   
+}
+
+function changeBody(){
+    if(indexBody == maxIndex){
+        indexBody = 1;
+    }
+    else{
+        indexBody++;
+    }
+    const img = document.getElementById('pokemon-body'); 
+    img.src = `../assets/pokemonParts/body${indexBody}.png`;   
+}
+
+function changeLegs(){
+    if(indexLegs == maxIndex){
+        indexLegs = 1;
+    }
+    else{
+        indexLegs++;
+    }
+    const img = document.getElementById('pokemon-legs'); 
+    img.src = `../assets/pokemonParts/legs${indexLegs}.png`;   
+}
 
