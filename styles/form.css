@@ -8,6 +8,8 @@ form {
     width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     font-family: 'Press Start 2P', cursive;
+    position: relative;
+    float: left;
 }
 
 h1 {
@@ -57,4 +59,23 @@ input[type="submit"]:hover {
 label{
     font-family: 'Sans-serif', sans-serif;
     font-size: 20px;
-} */
+}
+
+.creator{
+    position: relative; 
+    float: left;
+    background: linear-gradient(to bottom, #f8d030, #f08030);
+    border: 4px solid #2a75bb;
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    font-family: 'Press Start 2P', cursive;
+}
+
+.creator img{
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
