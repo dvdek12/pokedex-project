@@ -38,7 +38,33 @@ document.addEventListener('DOMContentLoaded', () => {
                                     front_default: image64
                                 }
                             }
-                        }
+                        },
+                        stats: [
+                            {
+                                base_stat: formDataObject.hp,
+                                stat: { name: 'hp' }
+                            },
+                            {
+                                base_stat: formDataObject.attack,
+                                stat: { name: 'attack' }
+                            },
+                            {
+                                base_stat: formDataObject.defense,
+                                stat: { name: 'defense' }
+                            },
+                            {
+                                base_stat: formDataObject.special_attack,
+                                stat: { name: 'special-attack' }
+                            },
+                            {
+                                base_stat: formDataObject.special_defense,
+                                stat: { name: 'special-defense' }
+                            },
+                            {
+                                base_stat: formDataObject.speed,
+                                stat: { name: 'speed' }
+                            }
+                        ]
                     };
 
                     // Dodanie danych do localStorage
