@@ -80,11 +80,6 @@ const createSoundPlay = ({ cries }) => {
     document.querySelector('.abt-container').appendChild(audio)
 }
 
-document.getElementById('play-sound').addEventListener('click', function() {
-    const audio = document.getElementById('pokemon-sound');
-    audio.play();
-});
-
 const createStatsGrid = ({ stats }) => {
     if(stats){
         stats.forEach(s => {

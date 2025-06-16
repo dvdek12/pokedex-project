@@ -7,9 +7,6 @@ const pokemonListWrapper = document.getElementById('pokemon-list-wrapper')
 
 
 
-
-
-
 const getPokemonFromAPI = async (pokemon) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
     try {
@@ -172,12 +169,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         subDiv.className = "pokemon-buttons"
         editBtn.classList.add("button")
         editBtn.classList.add("edit")
-        editBtn.textContent = "Edytuj"
+        editBtn.textContent = "Edit"
         editBtn.onclick = () => navigateToEditPage(pokemon.name)
 
         removeBtn.classList.add("button")
         removeBtn.classList.add("delete")
-        removeBtn.textContent = "Usuń"
+        removeBtn.textContent = "Delete"
         removeBtn.onclick = () => removePokemon(pokemon.name)
 
         subDiv.appendChild(editBtn)

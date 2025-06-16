@@ -63,12 +63,14 @@
 }
 
 .abt-container{
+    background: linear-gradient(180deg, #a8fcaf 60%, #294627 100%);
     width: 100vw;
     display: flex;
     justify-content: center ;
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    padding: 50px;
 }
 
 

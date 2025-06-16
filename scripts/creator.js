@@ -111,7 +111,6 @@ function mergeImagesFunc(){
         ctx.drawImage(img1, 0, 0);
         ctx.drawImage(img2, 0, 0);
         ctx.drawImage(img3, 0, 0);
-        document.body.appendChild(canvas);
 
         const link = document.createElement('a');
         link.download = 'merged.png';
